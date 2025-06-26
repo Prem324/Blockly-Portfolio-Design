@@ -1,0 +1,51 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* border: 1px solid gray; */
+}
+
+.rotate-90 {
+  transform: rotate(-90deg);
+  transform-origin: center;
+  white-space: nowrap;
+}
+
+.social-icon-hover:hover {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.18),
+    0 1.5px 6px 0 rgba(0, 0, 0, 0.15);
+  border-color: #ff9800;
+}
+
+.shadow-figma {
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18), 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.email-bar {
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  color: #000000;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  margin-bottom: 12px;
+}
+
+.email-underline {
+  width: 18px;
+  height: 3px;
+  background: #000000;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.social-icon-figma {
+  /* border-radius: 50%; */
+  background: #fff;
+  /* border: 1.5px solid #222; */
+  /* box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s; */
+}
+.social-icon-figma:hover {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.18);
+  border-color: #ff9800;
+  transform: scale(1.08);
+}
