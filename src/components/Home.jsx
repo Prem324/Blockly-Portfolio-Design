@@ -2,8 +2,6 @@ import ProfileImg from "../assets/Profile-Img.svg";
 import SocialIcons from "./SocialIcons";
 
 function Home({ theme }) {
-  const isMobile = window.innerWidth < 768;
-  const profileW = isMobile ? 140 : 520;
   const textColor = theme === "dark" ? "#fff" : "#737373";
   const subtitleColor = theme === "dark" ? "#e0e0e0" : "#444";
   const hrColor = theme === "dark" ? "#fff" : "#222";
@@ -12,48 +10,29 @@ function Home({ theme }) {
 
   return (
     <div
-      className={`position-relative min-vh-100 d-flex justify-content-center align-items-center overflow-hidden ${
+      className={`home-container position-relative min-vh-lg-100 d-flex justify-content-center align-items-center overflow-hidden p-3 p-lg-0 ${
         theme === "dark" ? "bg-dark text-white" : "bg-white text-dark"
       }`}
     >
-      <div
-        style={{
-          position: "absolute",
-          left: 60,
-          top: "60%",
-          transform: "translateY(-50%)",
-          zIndex: 10,
-        }}
-      >
+      <div className="social-icons-wrapper-home">
         <SocialIcons theme={theme} />
       </div>
 
-      <div
-        className="d-flex flex-md-row flex-column align-items-start justify-content-center w-100 mt-5 pt-4 gap-5"
-        style={{ maxWidth: 1200, minHeight: isMobile ? 500 : 600 }}
-      >
-        <div
-          className="d-md-none  align-items-center justify-content-center position-relative flex-shrink-0"
-          style={{ width: isMobile ? 200 : 420, height: isMobile ? 200 : 420 }}
-        >
+      <div className="home-content-container d-flex flex-column flex-md-row align-items-start justify-content-center w-100 mt-5 pt-4 gap-0 gap-lg-5">
+        <div className="profile-img-container-mobile d-md-none align-items-center justify-content-center position-relative flex-shrink-0">
           <img
             src={ProfileImg}
             alt="profile"
-            className="position-relative"
+            className="profile-img position-relative w-50"
             style={{
-              width: profileW,
-              height: profileW,
               objectFit: "cover",
               zIndex: 2,
             }}
           />
         </div>
-        <div
-          className="d-flex flex-column align-items-start justify-content-start flex-grow-1 mt-5 "
-          style={{ maxWidth: 500 }}
-        >
+        <div className="intro-text-container d-flex flex-column align-items-start justify-content-start flex-grow-1 mt-5">
           <div
-            className="mb-2 px-4 py-2 fw-bold shadow-figma"
+            className="hello-badge mb-2 px-4 py-2 fw-bold shadow-figma"
             style={{
               background: "linear-gradient(90deg,#32F6F6 0%,#A6A79F 100%)",
               borderTopLeftRadius: 40,
@@ -61,25 +40,16 @@ function Home({ theme }) {
               borderBottomLeftRadius: 0,
               borderBottomRightRadius: 20,
               color: "#fff",
-              fontSize: isMobile ? 16 : 20,
               boxShadow: "0 4px 16px 0 rgba(0,0,0,0.10)",
             }}
           >
             Hello!
           </div>
-          <h1
-            className=" mb-2"
-            style={{
-              fontSize: isMobile ? 28 : 44,
-              lineHeight: 1.1,
-              color: textColor,
-            }}
-          >
+          <h1 className="title-heading mb-2" style={{ color: textColor }}>
             I'm{" "}
             <span
+              className="title-name"
               style={{
-                fontWeight: 700,
-                fontSize: isMobile ? 28 : 44,
                 color: "#737373",
                 textShadow: "0 2px 8px rgba(0,0,0,0.10)",
                 borderBottom: `3px solid ${hrColor}`,
@@ -89,8 +59,8 @@ function Home({ theme }) {
               Anish
             </span>
             <span
+              className="wave-emoji"
               style={{
-                fontSize: isMobile ? 24 : 40,
                 marginLeft: 4,
                 verticalAlign: "middle",
                 filter: "drop-shadow(0 2px 4px rgba(255,200,0,0.3))",
@@ -102,20 +72,19 @@ function Home({ theme }) {
             </span>
           </h1>
           <p
-            className="fs-6 fs-md-5 mb-4"
+            className="subtitle fs-6 fs-md-5 mb-4"
             style={{ color: subtitleColor, fontWeight: 400 }}
           >
             UI/UX Designer, Front-End Developer & Thinker.
             <br />
             Based in India.
           </p>
-          <div className="d-flex gap-4 mt-4 flex-wrap">
+          <div className="buttons-container d-flex gap-4 mt-4 flex-wrap">
             <button
-              className="btn fw-bold text-white px-3 py-2 shadow-figma"
+              className="btn fw-bold text-white px-3 py-2 shadow-figma cta-button"
               style={{
                 background: "linear-gradient(90deg,#DF580C 0%,#FD993D 100%)",
                 borderRadius: 12,
-                fontSize: isMobile ? 14 : 15,
                 boxShadow: "0 4px 16px 0 rgba(223,88,12,0.18)",
                 border: "2px solid white",
               }}
@@ -123,11 +92,10 @@ function Home({ theme }) {
               Download CV
             </button>
             <button
-              className="btn fw-bold text-white px-3 py-2 shadow-figma"
+              className="btn fw-bold text-white px-3 py-2 shadow-figma cta-button"
               style={{
                 background: "linear-gradient(90deg,#434343 0%,#000000 100%)",
                 borderRadius: 12,
-                fontSize: isMobile ? 14 : 15,
                 boxShadow: "0 4px 16px 0 rgba(67,67,67,0.18)",
                 border: "2px solid white",
               }}
@@ -136,17 +104,12 @@ function Home({ theme }) {
             </button>
           </div>
         </div>
-        <div
-          className="d-md-flex d-none align-items-center justify-content-center position-relative flex-shrink-0"
-          style={{ width: isMobile ? 200 : 420, height: isMobile ? 200 : 420 }}
-        >
+        <div className="profile-img-container-desktop d-none d-md-flex align-items-center justify-content-center position-relative flex-shrink-0">
           <img
             src={ProfileImg}
             alt="profile"
-            className="position-relative"
+            className="profile-img position-relative"
             style={{
-              width: profileW,
-              height: profileW,
               objectFit: "cover",
               zIndex: 2,
             }}
@@ -154,15 +117,7 @@ function Home({ theme }) {
         </div>
       </div>
 
-      <div
-        style={{
-          position: "absolute",
-          right: 80,
-          top: "68%",
-          transform: "translateY(-50%)",
-          zIndex: 10,
-        }}
-      >
+      <div className="email-wrapper-home">
         <div className="d-none d-md-flex flex-column align-items-center">
           <span className="email-bar" style={{ color: emailColor }}>
             sinhaanishkumar@outlook.com
