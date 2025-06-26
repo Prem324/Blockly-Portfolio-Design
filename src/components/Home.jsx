@@ -2,7 +2,6 @@ import ProfileImg from "../assets/Profile-Img.svg";
 import SocialIcons from "./SocialIcons";
 
 function Home({ theme }) {
-  // Responsive sizes
   const isMobile = window.innerWidth < 768;
   const profileW = isMobile ? 140 : 520;
   const textColor = theme === "dark" ? "#fff" : "#737373";
@@ -17,7 +16,6 @@ function Home({ theme }) {
         theme === "dark" ? "bg-dark text-white" : "bg-white text-dark"
       }`}
     >
-      {/* SocialIcons bar, vertically centered to main content */}
       <div
         style={{
           position: "absolute",
@@ -30,12 +28,10 @@ function Home({ theme }) {
         <SocialIcons theme={theme} />
       </div>
 
-      {/* Main content and profile */}
       <div
         className="d-flex flex-md-row flex-column align-items-start justify-content-center w-100 mt-5 pt-4 gap-5"
         style={{ maxWidth: 1200, minHeight: isMobile ? 500 : 600 }}
       >
-        {/* Left: Main content */}
         <div
           className="d-md-none  align-items-center justify-content-center position-relative flex-shrink-0"
           style={{ width: isMobile ? 200 : 420, height: isMobile ? 200 : 420 }}
@@ -140,7 +136,6 @@ function Home({ theme }) {
             </button>
           </div>
         </div>
-        {/* Right: Profile image on yellow blob */}
         <div
           className="d-md-flex d-none align-items-center justify-content-center position-relative flex-shrink-0"
           style={{ width: isMobile ? 200 : 420, height: isMobile ? 200 : 420 }}
@@ -159,7 +154,6 @@ function Home({ theme }) {
         </div>
       </div>
 
-      {/* Email Bar, vertically centered to main content */}
       <div
         style={{
           position: "absolute",
